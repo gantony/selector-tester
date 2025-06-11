@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector Tester Tool</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        label { display: block; margin-top: 1em; }
+        input, textarea { width: 100%; padding: 0.5em; margin-top: 0.2em; }
+        button { margin-top: 1em; padding: 0.5em 1em; }
+        pre { background: #f4f4f4; padding: 1em; border-radius: 4px; margin-top: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Selector Tester Tool</h1>
+    <form id="selectorForm">
+        <label>URL:
+            <input type="text" id="url" required value="https://localhost:9443/tigera-elasticsearch/flowLogs/search" />
+        </label>
+        <label>Token:
+            <input type="text" id="token" />
+        </label>
+        <label>Selector String:
+            <input type="text" id="selector" required />
+        </label>
+        <label>Time Range From:
+            <input type="text" id="timeFrom" required value="2025-06-09T23:34:21Z" />
+        </label>
+        <label>Time Range To:
+            <input type="text" id="timeTo" required value="2025-06-10T14:34:21Z" />
+        </label>
+        <pre id="payloadPreview" style="background: #f4f4f4; padding: 1em; border-radius: 4px; margin-top: 1em; font-family:monospace;" readonly></pre>
+        <button type="submit">Send POST Request</button>
+    </form>
+    <pre id="result"></pre>
+    <script src="tool.js"></script>
+</body>
+</html>
